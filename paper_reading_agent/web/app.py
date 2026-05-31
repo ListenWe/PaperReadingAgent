@@ -118,10 +118,41 @@ body, .stMarkdown, .stText, p, li, label {
     font-size: 1.15rem;
     color: #2d2d2d !important;
 }
-h1 { font-family: 'Press Start 2P', monospace !important; font-size: 1.4rem !important; color: #c84c09 !important; }
-h2 { font-family: 'Press Start 2P', monospace !important; font-size: 1.0rem !important; color: #c84c09 !important;
+h1 { font-family: 'Press Start 2P', monospace !important; font-size: 1.55rem !important; color: #c84c09 !important; }
+h2 { font-family: 'Press Start 2P', monospace !important; font-size: 1.15rem !important; color: #c84c09 !important;
      border-bottom: 3px double #c84c09; padding-bottom: 0.25rem; }
-h3 { font-family: 'Press Start 2P', monospace !important; font-size: 0.75rem !important; color: #2d2d2d !important; }
+h3 { font-family: 'Press Start 2P', monospace !important; font-size: 0.85rem !important; color: #2d2d2d !important; }
+
+/* ---- chat messages: regular font for readability ---- */
+[data-testid="stChatMessage"] .stMarkdown,
+[data-testid="stChatMessage"] .stMarkdown p,
+[data-testid="stChatMessage"] .stMarkdown li {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans SC', sans-serif !important;
+    font-size: 1.0rem;
+    color: #2d2d2d !important;
+    line-height: 1.7;
+}
+[data-testid="stChatMessage"] .stMarkdown h1 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans SC', sans-serif !important;
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+    color: #c84c09 !important;
+    border: none;
+}
+[data-testid="stChatMessage"] .stMarkdown h2 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans SC', sans-serif !important;
+    font-size: 1.2rem !important;
+    font-weight: 700 !important;
+    color: #c84c09 !important;
+    border-bottom: 2px solid #e0d5c0;
+    padding-bottom: 0.2rem;
+}
+[data-testid="stChatMessage"] .stMarkdown h3 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans SC', sans-serif !important;
+    font-size: 1.05rem !important;
+    font-weight: 600 !important;
+    color: #2d2d2d !important;
+}
 
 /* ---- sidebar ---- */
 [data-testid="stSidebar"] {
@@ -153,26 +184,27 @@ h3 { font-family: 'Press Start 2P', monospace !important; font-size: 0.75rem !im
 }
 .nes-banner h1 {
     font-family: 'Press Start 2P', monospace !important;
-    font-size: 0.85rem !important;
+    font-size: 1.3rem !important;
     color: #f0c040 !important;
-    text-shadow: 3px 3px 0 #00000080, 0 0 12px #f0c04040;
-    margin: 4px 0 8px;
-    letter-spacing: 3px;
-    line-height: 1.6;
+    text-shadow: 4px 4px 0 #00000080, 0 0 16px #f0c04050;
+    margin: 8px 0;
+    letter-spacing: 5px;
+    line-height: 1.8;
+    word-break: break-all;
 }
 .nes-banner .sub {
     font-family: 'Press Start 2P', monospace;
-    font-size: 0.42rem;
-    color: #aabbcc;
+    font-size: 0.4rem;
+    color: #8899bb;
     letter-spacing: 2px;
     line-height: 1.8;
 }
 .nes-stars {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     color: #f0c040;
-    letter-spacing: 8px;
+    letter-spacing: 10px;
     text-shadow: 2px 2px 0 #00000060;
-    margin-bottom: 2px;
+    margin-bottom: 4px;
 }
 
 /* ---- buttons ---- */
@@ -213,17 +245,37 @@ h3 { font-family: 'Press Start 2P', monospace !important; font-size: 0.75rem !im
     border-radius: 0;
     box-shadow: 4px 4px 0 #d5c4a1;
 }
-.stChatInput textarea {
+
+/* ---- Q&A input ---- */
+.qa-input textarea {
     font-family: 'VT323', monospace !important;
     font-size: 1.1rem !important;
     background: #faf6ef !important;
-    border: 2px solid #2d2d2d !important;
+    border: 3px solid #2d2d2d !important;
     border-radius: 0 !important;
     color: #2d2d2d !important;
+    padding: 10px 14px !important;
 }
-.stChatInput textarea:focus {
+.qa-input textarea:focus {
     border-color: #c84c09 !important;
     box-shadow: 3px 3px 0 #c84c0930;
+}
+.qa-send-btn button {
+    font-family: 'Press Start 2P', monospace !important;
+    font-size: 0.55rem !important;
+    height: 68px;
+    background: #faf6ef !important;
+    color: #2d2d2d !important;
+    border: 3px solid #2d2d2d !important;
+    border-radius: 0 !important;
+    box-shadow: 4px 4px 0 #c84c0940;
+    transition: all 0.1s;
+    image-rendering: pixelated;
+}
+.qa-send-btn button:hover {
+    background: #c84c09 !important;
+    color: #fff !important;
+    border-color: #c84c09 !important;
 }
 
 /* ---- tabs ---- */
@@ -241,10 +293,17 @@ h3 { font-family: 'Press Start 2P', monospace !important; font-size: 0.75rem !im
 }
 
 /* ---- alerts ---- */
-.stAlert { border-radius: 0 !important; font-family: 'VT323', monospace !important; box-shadow: 3px 3px 0 #00000015; }
+.stAlert { border-radius: 0 !important; font-family: 'Press Start 2P', monospace !important; font-size: 0.5rem !important; box-shadow: 3px 3px 0 #00000015; }
 div[data-testid="stInfo"]    { background: #e8f0fe; border: 2px solid #5a8ec0; }
 div[data-testid="stSuccess"] { background: #e6f4e6; border: 2px solid #5a9e5a; }
 div[data-testid="stError"]   { background: #fbeae5; border: 2px solid #c84c09; }
+
+/* ---- spinner ---- */
+.stSpinner {
+    font-family: 'Press Start 2P', monospace !important;
+    font-size: 0.5rem !important;
+    color: #c84c09 !important;
+}
 
 /* ---- code ---- */
 code {
@@ -266,8 +325,8 @@ code {
 
 PIXEL_BANNER = """
 <div class="nes-banner">
-  <div class="nes-stars">★ ★ ★ ★ ★</div>
-  <h1>📖 论 文 阅 读 助 手</h1>
+  <div class="nes-stars">★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★</div>
+  <h1>PaperReadingAgent</h1>
   <div class="sub">
     ◆ AI 学术论文解读 ◆ 解析 ◆ 分析 ◆ 问答 ◆<br>
     上传 PDF，让 AI 为你深度解读论文
@@ -359,7 +418,23 @@ def main() -> None:
                 with st.chat_message(msg["role"]):
                     st.markdown(_normalize_latex(msg["content"]))
 
-            if prompt := st.chat_input("> 询问论文相关内容..."):
+            with st.form("qa_form", clear_on_submit=True, border=False):
+                cols = st.columns([10, 1])
+                with cols[0]:
+                    prompt = st.text_area(
+                        "输入问题", placeholder="输入问题...",
+                        height=68, label_visibility="collapsed",
+                        key="qa_input",
+                    )
+                with cols[1]:
+                    st.markdown('<div class="qa-send-btn"></div>', unsafe_allow_html=True)
+                    submitted = st.form_submit_button("发送", use_container_width=True)
+                if submitted and prompt.strip():
+                    st.session_state._qa_prompt = prompt.strip()
+
+            if "_qa_prompt" in st.session_state and st.session_state._qa_prompt:
+                prompt = st.session_state._qa_prompt
+                del st.session_state._qa_prompt
                 st.session_state.messages.append({"role": "user", "content": prompt})
                 with st.chat_message("user"):
                     st.markdown(prompt)
@@ -372,6 +447,7 @@ def main() -> None:
                             st.session_state.messages.append({"role": "assistant", "content": response})
                         except Exception as e:
                             st.error(f"错误：{e}")
+                st.rerun()
 
 
 if __name__ == "__main__":
